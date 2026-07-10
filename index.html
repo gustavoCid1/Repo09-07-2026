@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Práctica DWI - Herramientas Web</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Práctica de Laboratorio DWI</h1>
+    <nav class="menu">
+      <button class="menu-btn active" data-target="edad">Calculadora de Edad</button>
+      <button class="menu-btn" data-target="temperatura">Conversor de Temperatura</button>
+      <button class="menu-btn" data-target="tareas">Gestor de Tareas</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="edad" class="tool active">
+      <div class="card">
+        <h2>Calculadora de Edad</h2>
+        <p class="subtitle">Ingresa tu fecha de nacimiento</p>
+
+        <form id="form-edad">
+          <div class="date-picker">
+            <select id="dia" required></select>
+            <select id="mes" required></select>
+            <select id="anio" required></select>
+          </div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+
+        <p id="error-edad" class="error"></p>
+        <p id="resultado-edad" class="resultado"></p>
+      </div>
+    </section>
+    <section id="temperatura" class="tool">
+      <div class="card">
+        <h2>Conversor de Temperatura</h2>
+        <p class="subtitle">Ingresa el valor, elige las unidades y convierte</p>
+
+        <form id="form-temp">
+          <input type="number" id="valor-temp" step="any" placeholder="Valor" required>
+
+          <select id="unidad-origen" required>
+            <option value="" disabled selected>Unidad de origen</option>
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+          </select>
+
+          <select id="unidad-destino" required>
+            <option value="" disabled selected>Unidad de destino</option>
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+          </select>
+
+          <button type="submit" class="btn" id="btn-convertir" disabled>Convertir</button>
+        </form>
+
+        <p id="resultado-temp" class="resultado"></p>
+      </div>
+    </section>
+    <section id="tareas" class="tool">
+      <div class="card">
+        <h2>Gestor de Tareas</h2>
+        <p class="subtitle">Escribe una tarea y presiona Enter</p>
+
+        <input type="text" id="input-tarea" placeholder="Escribe una tarea y presiona Enter...">
+
+        <ul id="lista-tareas"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Práctica de laboratorio DWI &mdash; TI DSM-33</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
