@@ -1,6 +1,4 @@
-/* =========================================================
-   NAVEGACIÓN ENTRE SECCIONES (SPA)
-========================================================= */
+
 const botonesMenu = document.querySelectorAll('.menu-btn');
 const secciones = document.querySelectorAll('.tool');
 
@@ -17,9 +15,7 @@ botonesMenu.forEach(boton => {
 });
 
 
-/* =========================================================
-   PROYECTO 1: CALCULADORA DE EDAD
-========================================================= */
+
 const selDia = document.getElementById('dia');
 const selMes = document.getElementById('mes');
 const selAnio = document.getElementById('anio');
@@ -72,7 +68,7 @@ formEdad.addEventListener('submit', (e) => {
   const fechaNacimiento = new Date(anio, mes - 1, dia);
   const hoy = new Date();
 
-  // Validar que la fecha exista realmente (ej. 31 de febrero no es válido)
+
   const fechaValida =
     fechaNacimiento.getFullYear() === anio &&
     fechaNacimiento.getMonth() === mes - 1 &&
@@ -104,9 +100,6 @@ formEdad.addEventListener('submit', (e) => {
 });
 
 
-/* =========================================================
-   PROYECTO 2: CONVERSOR DE TEMPERATURA
-========================================================= */
 const valorTemp = document.getElementById('valor-temp');
 const unidadOrigen = document.getElementById('unidad-origen');
 const unidadDestino = document.getElementById('unidad-destino');
@@ -131,7 +124,7 @@ function validarCamposTemp() {
 const nombresUnidad = { C: 'Celsius', F: 'Fahrenheit', K: 'Kelvin' };
 
 function convertirTemperatura(valor, origen, destino) {
-  // Primero convertimos todo a Celsius
+
   let celsius;
   switch (origen) {
     case 'C': celsius = valor; break;
@@ -139,7 +132,6 @@ function convertirTemperatura(valor, origen, destino) {
     case 'K': celsius = valor - 273.15; break;
   }
 
-  // Luego de Celsius a la unidad destino
   switch (destino) {
     case 'C': return celsius;
     case 'F': return celsius * (9 / 5) + 32;
@@ -161,19 +153,17 @@ formTemp.addEventListener('submit', (e) => {
 });
 
 
-/* =========================================================
-   PROYECTO 3: GESTOR DE TAREAS
-========================================================= */
+
 const inputTarea = document.getElementById('input-tarea');
 const listaTareas = document.getElementById('lista-tareas');
 
-// Estructura de datos interna
+
 let tareas = [];
 
 function renderTasks() {
   listaTareas.innerHTML = '';
 
-  // Pendientes primero, completadas al final
+
   const pendientes = tareas.filter(t => !t.completada);
   const completadas = tareas.filter(t => t.completada);
   const ordenadas = [...pendientes, ...completadas];
